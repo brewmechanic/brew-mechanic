@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bounty's End | Brew Mechanic</title>
+    <!-- Updated version 2.0 - Fixed feedback display -->
     <style>
         * {
             margin: 0;
@@ -54,35 +55,9 @@
             color: #aaa;
         }
         
-        .dates {
-            background: #1a1a1a;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: space-around;
-            border: 1px solid #333;
-        }
-        
-        .date-item {
-            text-align: center;
-        }
-        
-        .date-label {
-            color: #888;
-            font-size: 0.9em;
-            margin-bottom: 5px;
-        }
-        
-        .date-value {
-            color: #ff6b35;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        
         .stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             margin-bottom: 40px;
         }
@@ -167,11 +142,14 @@
             width: 100%;
             overflow: hidden;
             border-radius: 5px;
+            background: #0a0a0a;
+            min-height: 400px;
         }
         
         .form-container iframe, .responses-container iframe {
             border: none;
             width: 100%;
+            display: block;
         }
         
         @media (max-width: 768px) {
@@ -181,11 +159,6 @@
             
             .stats {
                 grid-template-columns: 1fr;
-            }
-            
-            .dates {
-                flex-direction: column;
-                gap: 15px;
             }
         }
     </style>
@@ -199,17 +172,6 @@
             <p class="beer-style">Coconut Mild</p>
         </div>
         
-        <div class="dates">
-            <div class="date-item">
-                <div class="date-label">Brewed</div>
-                <div class="date-value">20 Sep 2025</div>
-            </div>
-            <div class="date-item">
-                <div class="date-label">Bottled</div>
-                <div class="date-value">30 Sep 2025</div>
-            </div>
-        </div>
-        
         <div class="stats">
             <div class="stat-card">
                 <div class="stat-label">ABV</div>
@@ -218,10 +180,6 @@
             <div class="stat-card">
                 <div class="stat-label">IBU</div>
                 <div class="stat-value">18</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Batch</div>
-                <div class="stat-value">#008</div>
             </div>
         </div>
         
@@ -268,7 +226,7 @@
         <div class="section">
             <h2 class="section-title">Previous Feedback</h2>
             <div class="responses-container">
-                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRw6gCz9fZ89pDkx9VBBANdAJyZnY0YRkCm24VODCtDjYG6gRldgRTZzMv4GbQanRimQiSzNWmamgiC/pubhtml?gid=1372362283&single=true&widget=true&headers=false" width="100%" height="500" frameborder="0"></iframe>
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRw6gCz9fZ89pDkx9VBBANdAJyZnY0YRkCm24VODCtDjYG6gRldgRTZzMv4GbQanRimQiSzNWmamgiC/pubhtml?gid=1372362283&single=true" width="100%" height="600" frameborder="0"></iframe>
             </div>
         </div>
     </div>
