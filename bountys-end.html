@@ -163,6 +163,17 @@
             box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
         }
         
+        .form-container, .responses-container {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        
+        .form-container iframe, .responses-container iframe {
+            border: none;
+            width: 100%;
+        }
+        
         @media (max-width: 768px) {
             .beer-name {
                 font-size: 2em;
@@ -247,7 +258,19 @@
             </div>
         </div>
         
-        <a href="#" class="feedback-btn">Leave Feedback</a>
+        <div class="section">
+            <h2 class="section-title">Leave Your Feedback</h2>
+            <div class="form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe2duDMG1WcyNU4YjTNS8vAUapBPO1pnORZ3C5_sk6rmDzq8g/viewform?embedded=true" width="100%" height="650" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Previous Feedback</h2>
+            <div class="responses-container">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRw6gCz9fZ89pDkx9VBBANdAJyZnY0YRkCm24VODCtDjYG6gRldgRTZzMv4GbQanRimQiSzNWmamgiC/pubhtml?gid=1372362283&single=true&widget=true&headers=false" width="100%" height="500" frameborder="0"></iframe>
+            </div>
+        </div>
     </div>
 </body>
 </html>
