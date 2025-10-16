@@ -15,13 +15,14 @@
             background: #000;
             color: #fff;
             font-family: 'Arial', sans-serif;
-            padding: 8px;
+            padding: 10px;
             line-height: 1.6;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0;
         }
         
         .logo {
@@ -32,7 +33,7 @@
         }
         
         .logo img {
-            max-width: 700px;
+            max-width: 600px;
             width: 100%;
             height: auto;
             display: block;
@@ -52,18 +53,21 @@
         
         .beer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
             margin-bottom: 50px;
         }
         
         .beer-card {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            padding: 25px;
+            padding: 12px;
             border-radius: 10px;
             border: 2px solid #333;
             transition: all 0.3s ease;
             cursor: pointer;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
         }
         
         .beer-card:hover {
@@ -72,45 +76,73 @@
             box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
         }
         
+        .beer-logo-placeholder {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            background: #333;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.75em;
+            text-align: center;
+            border: 1px solid #444;
+        }
+        
+        .beer-logo {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid #444;
+        }
+        
+        .beer-info {
+            flex: 1;
+        }
+        
         .beer-name {
             color: #fff;
-            font-size: 1.5em;
-            margin-bottom: 10px;
+            font-size: 1.3em;
+            margin-bottom: 3px;
             font-weight: bold;
+            line-height: 1.2;
         }
         
         .beer-style {
             color: #aaa;
-            margin-bottom: 15px;
-            font-size: 0.95em;
+            margin-bottom: 8px;
+            font-size: 0.85em;
+            line-height: 1.2;
         }
         
         .beer-stats {
             display: flex;
-            justify-content: space-between;
-            border-top: 1px solid #444;
-            padding-top: 15px;
+            gap: 15px;
         }
         
         .beer-stat {
-            text-align: center;
+            text-align: left;
         }
         
         .beer-stat-label {
             color: #888;
-            font-size: 0.85em;
-            margin-bottom: 5px;
+            font-size: 0.7em;
+            margin-bottom: 1px;
         }
         
         .beer-stat-value {
             color: #ff6b35;
-            font-size: 1.2em;
+            font-size: 1em;
             font-weight: bold;
         }
         
         @media (max-width: 768px) {
             body {
-                padding: 5px;
+                padding: 8px;
             }
             
             .logo {
@@ -124,6 +156,28 @@
             
             .beer-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .beer-card {
+                padding: 10px;
+                gap: 10px;
+            }
+            
+            .beer-logo-placeholder,
+            .beer-logo {
+                width: 55px;
+                height: 55px;
+                min-width: 55px;
+                font-size: 0.65em;
+            }
+            
+            .beer-name {
+                font-size: 1.2em;
+            }
+            
+            .beer-style {
+                font-size: 0.85em;
             }
         }
     </style>
@@ -138,121 +192,145 @@
             <h2>Core Lineup</h2>
             <div class="beer-grid">
                 <div class="beer-card" onclick="window.location.href='brew-mechanic-gold.html'">
-                    <div class="beer-name">Brew Mechanic Gold</div>
-                    <div class="beer-style">American Pale Ale</div>
-                    <div class="beer-stats">
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">ABV</div>
-                            <div class="beer-stat-value">5%</div>
-                        </div>
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">IBU</div>
-                            <div class="beer-stat-value">37</div>
+                    <img src="images/bmglogo.png" alt="Brew Mechanic Gold" class="beer-logo">
+                    <div class="beer-info">
+                        <div class="beer-name">Brew Mechanic Gold</div>
+                        <div class="beer-style">American Pale Ale</div>
+                        <div class="beer-stats">
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">ABV</div>
+                                <div class="beer-stat-value">5%</div>
+                            </div>
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">IBU</div>
+                                <div class="beer-stat-value">37</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="beer-card" onclick="window.location.href='true-south-pils.html'">
-                    <div class="beer-name">True South Pils</div>
-                    <div class="beer-style">New Zealand Pilsner</div>
-                    <div class="beer-stats">
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">ABV</div>
-                            <div class="beer-stat-value">5%</div>
-                        </div>
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">IBU</div>
-                            <div class="beer-stat-value">35</div>
+                    <img src="images/tsplogo.png" alt="True South Pils" class="beer-logo">
+                    <div class="beer-info">
+                        <div class="beer-name">True South Pils</div>
+                        <div class="beer-style">New Zealand Pilsner</div>
+                        <div class="beer-stats">
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">ABV</div>
+                                <div class="beer-stat-value">5%</div>
+                            </div>
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">IBU</div>
+                                <div class="beer-stat-value">35</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="beer-card" onclick="window.location.href='workshop-brown.html'">
-                    <div class="beer-name">Workshop Brown</div>
-                    <div class="beer-style">American Brown Ale</div>
-                    <div class="beer-stats">
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">ABV</div>
-                            <div class="beer-stat-value">6%</div>
-                        </div>
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">IBU</div>
-                            <div class="beer-stat-value">26</div>
+                    <img src="images/wblogo.png" alt="Workshop Brown" class="beer-logo">
+                    <div class="beer-info">
+                        <div class="beer-name">Workshop Brown</div>
+                        <div class="beer-style">American Brown Ale</div>
+                        <div class="beer-stats">
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">ABV</div>
+                                <div class="beer-stat-value">6%</div>
+                            </div>
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">IBU</div>
+                                <div class="beer-stat-value">26</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="beer-card" onclick="window.location.href='wit-works.html'">
-                    <div class="beer-name">Wit Works</div>
-                    <div class="beer-style">Witbier</div>
-                    <div class="beer-stats">
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">ABV</div>
-                            <div class="beer-stat-value">5%</div>
-                        </div>
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">IBU</div>
-                            <div class="beer-stat-value">13</div>
+                    <img src="images/wwlogo.png" alt="Wit Works" class="beer-logo">
+                    <div class="beer-info">
+                        <div class="beer-name">Wit Works</div>
+                        <div class="beer-style">Witbier</div>
+                        <div class="beer-stats">
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">ABV</div>
+                                <div class="beer-stat-value">5%</div>
+                            </div>
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">IBU</div>
+                                <div class="beer-stat-value">13</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="beer-card" onclick="window.location.href='redline.html'">
-                    <div class="beer-name">Redline</div>
-                    <div class="beer-style">Red IPA</div>
-                    <div class="beer-stats">
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">ABV</div>
-                            <div class="beer-stat-value">7%</div>
-                        </div>
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">IBU</div>
-                            <div class="beer-stat-value">48</div>
+                    <img src="images/rlogo.png" alt="Redline" class="beer-logo">
+                    <div class="beer-info">
+                        <div class="beer-name">Redline</div>
+                        <div class="beer-style">Red IPA</div>
+                        <div class="beer-stats">
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">ABV</div>
+                                <div class="beer-stat-value">7%</div>
+                            </div>
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">IBU</div>
+                                <div class="beer-stat-value">48</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="beer-card" onclick="window.location.href='red-charger.html'">
-                    <div class="beer-name">Red Charger</div>
-                    <div class="beer-style">American Strong Ale</div>
-                    <div class="beer-stats">
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">ABV</div>
-                            <div class="beer-stat-value">8%</div>
-                        </div>
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">IBU</div>
-                            <div class="beer-stat-value">67</div>
+                    <img src="images/rclogo.png" alt="Red Charger" class="beer-logo">
+                    <div class="beer-info">
+                        <div class="beer-name">Red Charger</div>
+                        <div class="beer-style">American Strong Ale</div>
+                        <div class="beer-stats">
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">ABV</div>
+                                <div class="beer-stat-value">8%</div>
+                            </div>
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">IBU</div>
+                                <div class="beer-stat-value">67</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="beer-card" onclick="window.location.href='mollys-porter.html'">
-                    <div class="beer-name">Mollys Porter</div>
-                    <div class="beer-style">American Porter</div>
-                    <div class="beer-stats">
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">ABV</div>
-                            <div class="beer-stat-value">6%</div>
-                        </div>
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">IBU</div>
-                            <div class="beer-stat-value">42</div>
+                    <img src="images/mplogo.png" alt="Mollys Porter" class="beer-logo">
+                    <div class="beer-info">
+                        <div class="beer-name">Mollys Porter</div>
+                        <div class="beer-style">American Porter</div>
+                        <div class="beer-stats">
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">ABV</div>
+                                <div class="beer-stat-value">6%</div>
+                            </div>
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">IBU</div>
+                                <div class="beer-stat-value">42</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="beer-card" onclick="window.location.href='10w30-motor-oil.html'">
-                    <div class="beer-name">Dads Motor Oil</div>
-                    <div class="beer-style">American Stout</div>
-                    <div class="beer-stats">
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">ABV</div>
-                            <div class="beer-stat-value">6%</div>
-                        </div>
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">IBU</div>
-                            <div class="beer-stat-value">61</div>
+                    <img src="images/dmologo.png" alt="Dads Motor Oil" class="beer-logo">
+                    <div class="beer-info">
+                        <div class="beer-name">Dads Motor Oil</div>
+                        <div class="beer-style">American Stout</div>
+                        <div class="beer-stats">
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">ABV</div>
+                                <div class="beer-stat-value">6%</div>
+                            </div>
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">IBU</div>
+                                <div class="beer-stat-value">61</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -264,16 +342,19 @@
             
             <div class="beer-grid">
                 <div class="beer-card" onclick="window.location.href='bountys-end.html'">
-                    <div class="beer-name">Bounty's End</div>
-                    <div class="beer-style">Coconut Mild</div>
-                    <div class="beer-stats">
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">ABV</div>
-                            <div class="beer-stat-value">4%</div>
-                        </div>
-                        <div class="beer-stat">
-                            <div class="beer-stat-label">IBU</div>
-                            <div class="beer-stat-value">18</div>
+                    <img src="images/belogo.png" alt="Bounty's End" class="beer-logo">
+                    <div class="beer-info">
+                        <div class="beer-name">Bounty's End</div>
+                        <div class="beer-style">Coconut Mild</div>
+                        <div class="beer-stats">
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">ABV</div>
+                                <div class="beer-stat-value">4%</div>
+                            </div>
+                            <div class="beer-stat">
+                                <div class="beer-stat-label">IBU</div>
+                                <div class="beer-stat-value">18</div>
+                            </div>
                         </div>
                     </div>
                 </div>
